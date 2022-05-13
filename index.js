@@ -153,10 +153,10 @@ document.getElementById('closebtnDSK').addEventListener('click', () => {
 
 form.addEventListener('submit', (event) => {
   let validation = false;
-  if (email.value === email.value.toLowerCase()) {
+  if (email.value == email.value.toUpperCase()) {
     validation = true;
   }
-  if (validation === false) {
+  if (validation == false) {
     event.preventDefault();
     error.innerText = 'Email must be in Lower Case!';
   }
@@ -187,7 +187,7 @@ window.onload = () => {
   form.user.addEventListener('input', populateStorage);
   form.email.addEventListener('input', populateStorage);
   form.message.addEventListener('input', populateStorage);
-  if (localStorage.getItem('FormData') !== null) {
+  if (localStorage.getItem('FormData') == null) {
     getDataFromLocalStorage();
   }
 };
